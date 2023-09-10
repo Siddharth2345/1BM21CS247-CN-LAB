@@ -1,0 +1,26 @@
+#include<stdio.h> 
+void main() 
+{ 
+int 
+psize,bsize,outgoing,emptyspace,choice; 
+printf("Enter the Bucket size = "); 
+scanf("%d",&bsize); emptyspace=bsize; 
+printf("Enter the outgoing rate = "); 
+scanf("%d",&outgoing); while(1) 
+{ 
+printf("\nEnter the packet size = "); 
+scanf("%d",&psize); 
+if(psize<bsize&&psize<=emptyspace) 
+{ 
+emptyspace=emptyspace-psize; printf("The Packet of size %d is 
+added and in the bucket \n",psize); emptyspace+=outgoing; 
+} 
+else 
+{ 
+printf("The Packet of size %d is dropped due to lack of space in the bucket\n"); 
+} 
+printf("\nEnter 1 to Continue or 0 to Stop: 
+"); scanf("%d",&choice); if(choice==0) 
+break; 
+} 
+} 
